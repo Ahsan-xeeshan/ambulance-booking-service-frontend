@@ -26,6 +26,7 @@ import ChangePassword from "./pages/auth/ChangePassword";
 import LoginPage from "./pages/auth/Loginpage";
 import ProfilePage from "./pages/common/ProfilePage";
 import EditProfilePage from "./pages/common/EditProfilePage";
+import AIAmbulanceAssistant from "./components/ai/AIAmbulanceAssistant";
 
 function App() {
   const { loading, user } = useContext(AuthContext);
@@ -187,6 +188,7 @@ function App() {
                       </Routes>
                     </main>
                   </div>
+                  {user.role === "user" && <AIAmbulanceAssistant/>}
                 </div>
               ) : (
                 <Navigate to="/login" />
